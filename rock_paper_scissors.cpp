@@ -10,15 +10,19 @@ using namespace std;
 int main(){
   SetConsoleOutputCP(CP_UTF8);
   srand(time(NULL));
-  
-  int computer = rand () % 4 + 1;
+
+  int matrixResults[5][5] = { 
+   {TIE,LOSE,WIN,WIN,LOSE},
+   {WIN,TIE,LOSE,LOSE,WIN},
+   {LOSE,WIN,TIE,WIN,LOSE},
+   {LOSE,WIN,LOSE,TIE,WIN},
+   {WIN,LOSE,WIN,LOSE,TIE}
+ };
+
+  int computer = rand () % 5 + 1;
   int user = 0;
   int result = -1;
-  int** matrixResults;
-
-  matrixResults = createResultsMatrix();
-  fillResultMatrix(matrixResults);
-
+  
   cout << "====================\n";
   cout << "rock paper scissors lizard spock!\n";
   cout << "====================\n";
@@ -41,7 +45,7 @@ int main(){
   // Print Game
   cout << getEmoji(user) << " vs " << getEmoji(computer) << endl;
 
-  result = matrixResults[user-1][computer];
+  result = matrixResults[user-1][computer-1];
 
   //Prints game result
   switch(result){
@@ -55,7 +59,5 @@ int main(){
       cout << "You Lose!";
     break;
   }
-
-  delete_ResultsMatrix(matrixResults);
 
 }
