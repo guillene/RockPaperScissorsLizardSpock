@@ -29,5 +29,5 @@ with the intention to make the flow logic simpler.
   ✋|W T L L W
   ✌️|L W T W L
   🦎|L W L T W
-  🖖|W L V L T
+  🖖|W L W L T
 ```
